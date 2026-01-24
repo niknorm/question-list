@@ -1,0 +1,49 @@
+.wrapper {
+    max-width: 700px;
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    border-bottom: 1px solid #d1d1d1;
+    align-items: center;
+}
+
+.arrow {
+    cursor: pointer;
+}
+
+.openBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: start;
+}
+
+.rateBlock {
+    display: flex;
+    gap: 40px;
+    margin-top: 15px;
+}
+
+.rate {
+    background-color: #F8F8F8;
+    width: 110px;
+    height: 33px;
+    border-radius: 30px;
+    justify-content: center;
+    display: flex;
+}
+.complexity {
+    background-color: #F8F8F8;
+    width: 110px;
+    height: 33px;
+    border-radius: 30px;
+    justify-content: center;
+    display: flex;
+}
+
+.button {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+

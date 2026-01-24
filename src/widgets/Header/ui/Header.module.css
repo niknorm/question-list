@@ -1,0 +1,30 @@
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 190px;
+    background-color: #fff;
+}
+
+.logoName {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+
+.logo {
+    width: 30px;
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+    padding-left: 90px;
+}
+
+.registration {
+    display: flex;
+    gap: 15px;
+}

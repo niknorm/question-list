@@ -1,0 +1,16 @@
+.button {
+    background-color: #fff;
+    border: 1px solid;
+    border-color: #BABABA;
+    color: black;
+    width: 170px;
+    height: 28px;
+    font-size: 12px;
+}
+
+.specBlock {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+

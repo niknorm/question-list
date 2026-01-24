@@ -1,0 +1,32 @@
+.button {
+  border: none;
+  border-radius: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+
+.large {
+    background-color: #6A0BFF;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 16px;
+}
+
+.standart {
+    background-color: #fff;
+    color: #6A0BFF;
+    padding: 12px 24px;
+    font-size: 16px;
+}
+
+.small {
+  width: 8px ;
+  height: 17px;
+}
