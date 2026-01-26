@@ -23,21 +23,32 @@ export const QuestionsSpecialization = ({
         <div className={styles.container}>
           <p>Специализация</p>
           <div className={styles.specBlock}>
-            {data?.data.map((spec) => (
-              <Button
-                key={spec.id}
-                className={styles.button}
-                version="small"
-                onClick={() =>
-                  setQuestionQueryState((prev) => ({
-                    ...prev,
-                    questionSkills: [spec.id],
-                  }))
-                }
-              >
-                {spec.title}
-              </Button>
-            ))}
+            {data?.data.map((spec) => {
+              const isActive =
+                questionQueryState.questionSpecializations?.includes(spec.id);
+              return (
+                <Button
+                  key={spec.id}
+                  className={`${styles.button} ${isActive ? styles.active : ""}`}
+                  version="small"
+                  onClick={() => {
+                    const current =
+                      questionQueryState.questionSpecializations ?? [];
+
+                    const next = current.includes(spec.id)
+                      ? current.filter((id) => id !== spec.id)
+                      : [...current, spec.id];
+                    setQuestionQueryState((prev) => ({
+                      ...prev,
+                      questionSpecializations: next,
+                      page: 1,
+                    }));
+                  }}
+                >
+                  {spec.title}
+                </Button>
+              );
+            })}
           </div>
         </div>
       )}

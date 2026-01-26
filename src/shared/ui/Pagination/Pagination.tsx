@@ -6,11 +6,11 @@ import { Button } from "../Button/Button";
 
 interface Props {
   page: number;
-  totalPage?: number
-  limit?: number
+  totalPage?: number;
+  limit?: number;
   nextPage: () => void;
-  prevPage: () => void
-  selectPage: (page: number) => void
+  prevPage: () => void;
+  selectPage: (page: number) => void;
 }
 
 export const Pagination = ({

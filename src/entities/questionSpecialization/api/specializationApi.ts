@@ -3,7 +3,7 @@ import { api } from "@/shared/api/api";
 
 export const specializationApi = api.injectEndpoints({
   endpoints: (build) => ({
-    getSpecialization: build.query<{data: QuestionSpecialization[]}, void>({
+    getSpecialization: build.query<{ data: QuestionSpecialization[] }, void>({
       query: () => ({
         url: `/specializations`,
       }),
@@ -16,4 +16,5 @@ export const specializationApi = api.injectEndpoints({
   }),
 });
 
-export const {useGetSpecializationQuery, useGetSpecializationByIdQuery} = specializationApi
+export const { useGetSpecializationQuery, useGetSpecializationByIdQuery } =
+  specializationApi;

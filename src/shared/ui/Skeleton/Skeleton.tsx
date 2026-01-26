@@ -1,9 +1,8 @@
-import styles from './Skeleton.module.css'
-
+import styles from "./Skeleton.module.css";
 
 interface Props {
-    count: number,
-    type: string
+  count: number;
+  type: string;
 }
 
 export const Skeleton = ({ count, type }: Props) => {
@@ -15,4 +14,3 @@ export const Skeleton = ({ count, type }: Props) => {
     </ul>
   );
 };
-

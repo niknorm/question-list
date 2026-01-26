@@ -43,15 +43,21 @@ const QuestionPage = () => {
           </div>
 
           <aside className={styles.sideBar}>
+            <p>Уровень: </p>
+            <div className={styles.rateBlock}>
+              <p className={styles.rate}>
+                Рейтинг:{" "}
+                <span className={styles.rateNumber}>{question?.rate}</span>
+              </p>
+              <p className={styles.complexity}>
+                Сложность:{" "}
+                <span className={styles.rateNumber}>
+                  {question?.complexity}
+                </span>
+              </p>{" "}
+            </div>
+            <p>Навыки:</p>
             <div></div>
-            <p className={styles.rate}>
-              Рейтинг:{" "}
-              <span className={styles.rateNumber}>{question?.rate}</span>
-            </p>
-            <p className={styles.complexity}>
-              Сложность:{" "}
-              <span className={styles.rateNumber}>{question?.complexity}</span>
-            </p>{" "}
           </aside>
         </div>
       </main>

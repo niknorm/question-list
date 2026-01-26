@@ -1,27 +1,25 @@
-
 .pagination {
-    display: flex;
-    gap: 8px;
-    align-items: center;
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 
-
 .button {
-    border: none;
-    background-color: #fff;
-    cursor: pointer;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
 }
 
 .pageButton {
-    display: flex;
-    background-color: #fff;
-    gap: 5px;
-    padding: 12px;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  background-color: #fff;
+  gap: 5px;
+  padding: 12px;
+  align-items: center;
+  justify-content: center;
 }
 
 .active {
-    background-color: #6A0BFF ;
-    color: #fff;
+  background-color: #6a0bff;
+  color: #fff;
 }

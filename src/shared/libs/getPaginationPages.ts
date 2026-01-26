@@ -1,7 +1,6 @@
-
 export const getPaginationPages = (
   page: number,
-  totalPages: number
+  totalPages: number,
 ): number[] => {
   const start = Math.max(1, page - 2);
   const end = Math.min(totalPages, page + 2);
@@ -13,4 +12,3 @@ export const getPaginationPages = (
 
   return pages;
 };
-

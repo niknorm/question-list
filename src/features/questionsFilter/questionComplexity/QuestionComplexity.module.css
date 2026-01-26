@@ -9,6 +9,10 @@
     font-size: 12px;
 }
 
+.active {
+    border-color: #6A0BFF;
+}
+
 .complexityBlock {
     display: flex;
     flex-wrap: wrap;

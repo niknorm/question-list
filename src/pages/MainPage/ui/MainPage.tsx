@@ -28,12 +28,10 @@ export const MainPage = () => {
   const questions = data?.data ?? [];
   const totalPage = Math.ceil((data?.total ?? 0) / questionQueryState.limit);
 
-
   return (
-
     <div className={styles.wrapper}>
       <div className={styles.container}>
-        <QuestionList  questions={questions} isLoading={isLoading}/>
+        <QuestionList questions={questions} isLoading={isLoading} />
         <Pagination
           page={questionQueryState.page}
           totalPage={totalPage}
