@@ -1,8 +1,9 @@
 import type { QuestionQueryState } from "@/entities/question/model/question";
 import { useGetSkillQuery } from "@/entities/questionSkill/api/skillApi";
-import { Button } from "@/shared/ui/Button/Button";
 import type { Dispatch, SetStateAction } from "react";
+import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
 import styles from "./QuestionSkills.module.css";
+import { ButtonFilter } from "@/shared/ui/ButtonFilter/ButtonFilter";
 
 interface Props {
   setQuestionQueryState: Dispatch<SetStateAction<QuestionQueryState>>;
@@ -14,36 +15,34 @@ export const QuestionSkills = ({
   setQuestionQueryState,
 }: Props) => {
   const { data, isLoading } = useGetSkillQuery();
-  if (isLoading) return <p>Загрузка</p>;
+
+  if (isLoading) {
+    return <Skeleton count={6} type="item" />;
+  }
+
+  const skillOptions =
+    data?.data.map((skill) => ({
+      value: skill.id,
+      label: skill.title,
+    })) ?? [];
+
   return (
     <div>
       <p>Навыки</p>
-      <div className={styles.skillBlock}>
-        {data?.data.map((skill) => {
-          const isActive = questionQueryState.questionSkills?.includes(
-            skill.id,
-          );
 
-          return (
-            <Button
-              key={skill.id}
-              version="standart"
-              className={`${styles.button} ${isActive ? styles.active : ""}`}
-              onClick={() =>
-                setQuestionQueryState((prev) => {
-                  const current = prev.questionSkills ?? [];
-                  const next = current.includes(skill.id)
-                    ? current.filter((id) => id !== skill.id)
-                    : [...current, skill.id];
-                  return { ...prev, questionSkills: next, page: 1 };
-                })
-              }
-            >
-              {skill.title}
-            </Button>
-          );
-        })}
-      </div>
+      <ButtonFilter
+        options={skillOptions}
+        selectedValues={questionQueryState.questionSkills ?? []}
+        className={styles.skillBlock}
+        buttonClassName={styles.button}
+        onChange={(nextValues) =>
+          setQuestionQueryState((prev) => ({
+            ...prev,
+            questionSkills: nextValues,
+            page: 1,
+          }))
+        }
+      />
     </div>
   );
 };

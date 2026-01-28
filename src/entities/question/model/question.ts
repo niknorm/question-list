@@ -31,7 +31,6 @@ export interface QuestionSkill {
 export interface GetQuestionParams {
   page: number;
   limit: number;
-
   rate?: number[];
   complexity?: number[];
   questionSkills?: number[];

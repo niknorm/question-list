@@ -1,6 +1,6 @@
-import { Search } from "@/features/questionsFilter/search/Search";
+import { Search } from "@/features/questionsFilter/search/SearchQuestion";
 import styles from "./SideBar.module.css";
-import { QuestionsSpecialization } from "@/features/questionsFilter/questionsSpecialization/QuestionSpecialization";
+import { QuestionSpecialization } from "@/features/questionsFilter/questionsSpecialization/QuestionSpecialization";
 import { QuestionSkills } from "@/features/questionsFilter/questionSkills/QuestionSkills";
 import type { QuestionQueryState } from "@/entities/question/model/question";
 import type { Dispatch, SetStateAction } from "react";
@@ -16,7 +16,7 @@ function SideBar({ questionQueryState, setQuestionQueryState }: SideBarProps) {
   return (
     <div className={styles.sideBar}>
       <Search setQuestionQueryState={setQuestionQueryState} />
-      <QuestionsSpecialization
+      <QuestionSpecialization
         setQuestionQueryState={setQuestionQueryState}
         questionQueryState={questionQueryState}
       />
